@@ -2,6 +2,10 @@
 
 A beautiful, modern web interface for the MongoDB RAG API.
 
+## 🖼️ Preview
+
+![MongoDB RAG Chat Interface](assets/ui-look.png)
+
 ## 🎨 Features
 
 - **Clean, Modern UI** - Professional design with smooth animations
