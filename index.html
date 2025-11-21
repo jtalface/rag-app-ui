@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB RAG Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🤖 MongoDB RAG Chat</h1>
+                <p>Ask questions about MongoDB documentation</p>
+            </div>
+            <div class="header-stats" id="stats">
+                <span class="stat">📊 Loading...</span>
+            </div>
+        </header>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <!-- Chat Messages -->
+            <div class="chat-container" id="chatContainer">
+                <div class="message assistant">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-bubble">
+                        <div class="message-header">
+                            <span class="message-author">Assistant</span>
+                        </div>
+                        <div class="message-text">
+                            👋 Hi! I'm your MongoDB documentation assistant. Ask me anything about MongoDB best practices, configuration, backups, alerts, and more!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <!-- Options -->
+                <div class="options-bar">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="useRerank">
+                        <span>🔄 Use Reranking</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="useMemory" checked>
+                        <span>💾 Remember Conversation</span>
+                    </label>
+                    <button class="btn-clear" id="clearBtn" onclick="clearChat()">
+                        🗑️ Clear Chat
+                    </button>
+                </div>
+
+                <!-- Input Box -->
+                <div class="input-container">
+                    <textarea 
+                        id="queryInput" 
+                        placeholder="Type your question about MongoDB..."
+                        rows="1"
+                    ></textarea>
+                    <button id="sendBtn" onclick="sendQuery()" class="btn-send">
+                        <span class="btn-text">Send</span>
+                        <span class="btn-icon">📤</span>
+                    </button>
+                </div>
+
+                <!-- Status Bar -->
+                <div class="status-bar" id="statusBar">
+                    <span class="status-indicator" id="statusIndicator">●</span>
+                    <span id="statusText">Ready</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+
