@@ -1,4 +1,4 @@
-# MongoDB RAG Chat - Frontend
+# MongoDB RAG App - Frontend
 
 A beautiful, modern web interface for the MongoDB RAG API.
 
