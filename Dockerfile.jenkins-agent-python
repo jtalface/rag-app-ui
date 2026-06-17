@@ -1,0 +1,32 @@
+# Jenkins Agent with Java 21 and Python 3
+FROM eclipse-temurin:21-jdk
+
+# Switch to root to install packages
+USER root
+
+# Install Python 3, pip, and other useful tools
+RUN apt-get update && \
+    apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-venv \
+    git \
+    curl \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Rename the existing ubuntu user to jenkins (ubuntu user has UID/GID 1000 in base image)
+RUN usermod -l jenkins ubuntu && \
+    groupmod -n jenkins ubuntu && \
+    usermod -d /home/jenkins -m jenkins
+
+# Create the necessary directories
+RUN mkdir -p /home/jenkins/agent /home/jenkins/.jenkins && \
+    chown -R jenkins:jenkins /home/jenkins
+
+# Set working directory
+WORKDIR /home/jenkins
+
+# Keep container running
+CMD ["/bin/bash"]
+

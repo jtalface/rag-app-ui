@@ -35,10 +35,10 @@ open index.html
 
 ```bash
 # From the frontend directory
-python -m http.server 8080
+python -m http.server 8085
 
 # Then open in browser:
-# http://localhost:8080
+# http://localhost:8085
 ```
 
 ### Option 3: Serve with Node.js
@@ -48,9 +48,9 @@ python -m http.server 8080
 npm install -g http-server
 
 # Serve the frontend
-http-server -p 8080
+http-server -p 8085
 
-# Open http://localhost:8080
+# Open http://localhost:8085
 ```
 
 ## 📋 Prerequisites

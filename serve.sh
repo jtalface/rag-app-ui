@@ -3,7 +3,7 @@
 # Serve the frontend locally
 # Usage: ./serve.sh [port]
 
-PORT=${1:-8080}
+PORT=${1:-8085}
 
 echo "🌐 Starting frontend server..."
 echo "📍 http://localhost:${PORT}"
